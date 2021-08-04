@@ -72,7 +72,7 @@ def get_scores(model_name, iteration_number, best_model_and_parameters, data_set
 
     accuracy_old = (tp + tn) / (tp + fp + tn + fn)
 
-    tn, fp, fn, tp = metrics.confusion_matrix(y_true, y_pred).ravel()
+   # tn, fp, fn, tp = metrics.confusion_matrix(y_true, y_pred).ravel()
 
     TPR = tp / (tp + fn)
     FPR = fp / (fp + tn)
