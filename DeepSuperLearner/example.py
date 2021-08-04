@@ -234,12 +234,13 @@ if __name__ == '__main__':
     if len(sys.argv) == 2:
         got_argument = True
         all_datasets = [str(sys.argv[1])]
-        print(len(sys.argv))
+        print(f"all data sets: {all_datasets}")
         exit()
     for dt_name in all_datasets:
+        print(f"selected data set: {dt_name}")
         data_Set_name = dt_name
         #data_Set_name = "blood.csv"
-        print("starting dsl")
+        #print("starting dsl")
         model_to_iteration_and_best = {}
         '''creating the learners for the super learner'''
         ERT_learner = ExtremeRandomizedTrees(n_estimators=200, max_depth=None, max_features=1)
@@ -279,7 +280,7 @@ if __name__ == '__main__':
 
         '''now testing the improved model'''
 
-        print("starting dsl improved")
+        #print("starting dsl improved")
         Base_learners_improved1 = {'ExtremeRandomizedTrees1': ERT_learner, 'ExtremeRandomizedTrees2': ERT_learner,
                                   'kNearestNeighbors1': kNN_learner, 'kNearestNeighbors2': kNN_learner,
                                   'LogisticRegression1': LR_learner, 'LogisticRegression2': LR_learner,
@@ -352,5 +353,6 @@ if __name__ == '__main__':
 
         dic[data_Set_name] = models_to_iterations_dict
         if got_argument:
+            print("breaking")
             break
     write_scores(dic, data_Set_name)
