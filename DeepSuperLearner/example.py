@@ -235,7 +235,6 @@ if __name__ == '__main__':
         got_argument = True
         all_datasets = [str(sys.argv[1])]
         print(f"all data sets: {all_datasets}")
-        exit()
     for dt_name in all_datasets:
         print(f"selected data set: {dt_name}")
         data_Set_name = dt_name
