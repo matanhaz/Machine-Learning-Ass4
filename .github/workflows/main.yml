@@ -49,6 +49,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           # Artifact name
-          name: all_data
+          name: results_${{matrix.data_sets}}
           # A file, directory or wildcard pattern that describes what to upload
           path: ./results.xlsx
