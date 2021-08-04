@@ -36,7 +36,8 @@ jobs:
               pip install scipy
               pip install matplotlib
               pip install xgboost
-              
+              pip install pandas
+              pip install tqdm
 
       - name: Activating...
         run: |
