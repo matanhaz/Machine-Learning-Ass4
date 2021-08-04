@@ -237,7 +237,7 @@ if __name__ == '__main__':
     for dt_name in tqdm.tqdm(all_datasets):
         if len(sys.argv) == 2:
             got_argument = True
-            data_set_name = sys.argv
+            data_set_name = str(sys.argv[1])
         else:
             data_Set_name = dt_name
         #data_Set_name = "blood.csv"
