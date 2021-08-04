@@ -183,10 +183,8 @@ all_datasets = {"abalon.csv", "acute-inflammation.csv", "acute-nephritis.csv",
 def dataset_builder(dataset_name):
     X = None
     y = None
-    path_root = os.path.dirname(os.path.dirname(__file__))
-    path = path_root + r'\classification_datasets'
-    path = path + r'\classification_datasets'
-    path_to_data = path + '\\' + dataset_name
+  
+    path_to_data = r'classification_datasets' + '\\' + dataset_name
 
     if dataset_name == "abalon.csv":
         df = pd.read_csv(path_to_data)
