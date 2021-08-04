@@ -35,6 +35,7 @@ jobs:
               pip install sklearn
               pip install scipy
               pip install matplotlib
+              pip install xgboost
               
 
       - name: Activating...
