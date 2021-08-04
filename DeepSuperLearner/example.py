@@ -104,8 +104,8 @@ def get_scores(model_name, iteration_number, best_model_and_parameters, data_set
 
 def write_scores(model_to_best, data_set_name = None):
     if data_set_name is None:
-        data_Set_name = ""
-    workbook = xlsxwriter.Workbook(f'results_{data_Set_name}.xlsx')
+        data_set_name = ""
+    workbook = xlsxwriter.Workbook(f'results_{data_set_name}.xlsx')
     worksheet = workbook.add_worksheet()
 
     initial_data = ['Dataset Name', 'Algorythm Name', 'Cross Validation[1-10]', 'Hyper-Parameters Values',
@@ -116,10 +116,10 @@ def write_scores(model_to_best, data_set_name = None):
 
     row = 1
     for data_set_name in model_to_best.keys():
-        for model in model_to_best[data_Set_name].keys():
-            for iteration in model_to_best[data_Set_name][model].keys():
+        for model in model_to_best[data_set_name].keys():
+            for iteration in model_to_best[data_set_name][model].keys():
                 col = 0
-                scores = get_scores(model, iteration, model_to_best[data_Set_name][model][iteration], data_set_name)
+                scores = get_scores(model, iteration, model_to_best[data_set_name][model][iteration], data_set_name)
                 for score in scores:
                     worksheet.write(row, col, score)
                     col += 1
@@ -235,7 +235,7 @@ if __name__ == '__main__':
     for dt_name in tqdm.tqdm(all_datasets):
         if len(sys.argv) == 2:
             got_argument = True
-            data_set_name = str(sys.argv[1])
+            data_Set_name = str(sys.argv[1])
         else:
             data_Set_name = dt_name
         #data_Set_name = "blood.csv"
