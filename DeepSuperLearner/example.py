@@ -135,7 +135,7 @@ def cross_validation(X, Y, models, space):
 
     final_best_model = None
 
-    cv_outer = KFold(n_splits=5, shuffle=True, random_state=1)
+    cv_outer = KFold(n_splits=10, shuffle=True, random_state=1)
     index = 1
     index_to_best = {}
     # enumerate splits
@@ -231,13 +231,11 @@ import sys
 if __name__ == '__main__':
     dic = {}
     got_argument = False
-
-    for dt_name in tqdm.tqdm(all_datasets):
-        if len(sys.argv) == 2:
-            got_argument = True
-            data_Set_name = str(sys.argv[1])
-        else:
-            data_Set_name = dt_name
+    if len(sys.argv) == 2:
+        got_argument = True
+        all_datasets = [str(sys.argv[1])]
+    for dt_name in all_datasets:
+        data_Set_name = dt_name
         #data_Set_name = "blood.csv"
         print("starting dsl")
         model_to_iteration_and_best = {}
@@ -254,7 +252,7 @@ if __name__ == '__main__':
         # np.random.seed(100)
 
         '''generating data base , may be swapped to an exiting data set who knows'''
-        X, y = dataset_builder(dt_name)
+        X, y = dataset_builder(data_Set_name)
         # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
         '''fitting the model'''
@@ -353,5 +351,4 @@ if __name__ == '__main__':
         dic[data_Set_name] = models_to_iterations_dict
         if got_argument:
             break
-    if got_argument:
-        write_scores(dic, data_Set_name)
+    write_scores(dic, data_Set_name)
