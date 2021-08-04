@@ -34,6 +34,7 @@ jobs:
               pip install xlsxwriter
               pip install sklearn
               pip install scipy
+              pip install matplotlib
               
 
       - name: Activating...
