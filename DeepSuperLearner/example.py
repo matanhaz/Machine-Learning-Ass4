@@ -234,6 +234,8 @@ if __name__ == '__main__':
     if len(sys.argv) == 2:
         got_argument = True
         all_datasets = [str(sys.argv[1])]
+        print(len(sys.argv))
+        exit()
     for dt_name in all_datasets:
         data_Set_name = dt_name
         #data_Set_name = "blood.csv"
