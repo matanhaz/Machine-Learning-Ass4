@@ -32,7 +32,7 @@ jobs:
         run: |
               pip install numpy
               pip install xlsxwriter
-              
+              pip install sklearn
               pip install scipy
               
 
