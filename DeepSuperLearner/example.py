@@ -105,7 +105,7 @@ def get_scores(model_name, iteration_number, best_model_and_parameters, data_set
 def write_scores(model_to_best, data_set_name = None):
     if data_set_name is None:
         data_set_name = ""
-    workbook = xlsxwriter.Workbook(f'results_{data_set_name}.xlsx')
+    workbook = xlsxwriter.Workbook(f'results.xlsx')
     worksheet = workbook.add_worksheet()
 
     initial_data = ['Dataset Name', 'Algorythm Name', 'Cross Validation[1-10]', 'Hyper-Parameters Values',
