@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        data_sets: [abalon.csv, acute-inflammation.csv, acute-nephritis.csv,annealing.csv, ar4.csv, bank.csv, blood.csv, bodyfat.csv,breast-cancer.csv, breast-cancer-wisc.csv, breast-cancer-wisc-diag.csv,breast-cancer-wisc-prog.csv, breast-tissue.csv, car.csv, chatfield_4.csv,chscase_vine1.csv, cloud.csv, congressional-voting.csv,conn-bench-sonar-mines-rocks.csv, conn-bench-vowel-deterding.csv] 
+        data_sets: [abalon.csv, acute-inflammation.csv, acute-nephritis.csv,annealing.csv, ar4.csv,  bodyfat.csv,  breast-tissue.csv, car.csv, chscase_vine1.csv,  conn-bench-sonar-mines-rocks.csv, conn-bench-vowel-deterding.csv] 
 
 
     # Steps represent a sequence of tasks that will be executed as part of the job
