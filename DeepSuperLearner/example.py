@@ -90,7 +90,10 @@ def get_scores(model_name, iteration_number, best_model_and_parameters, data_set
         pr_curve = precision_recall_curve(y_true, model.predict_proba(best_model_and_parameters['X test'])[:, 1])
         auc_roc = roc_auc_score(y_true, model.predict(best_model_and_parameters['X test']))
     else:
-        pr_curve = precision_recall_curve(y_true, model.predict(best_model_and_parameters['X test'])[:, 1])
+        try:
+            pr_curve = precision_recall_curve(y_true, model.predict(best_model_and_parameters['X test'])[:, 1])
+        except:
+            pr_curve = precision_recall_curve(y_true, model.predict(best_model_and_parameters['X test'], True)[:, 1])
         auc_roc = roc_auc_score(y_true, model.predict(best_model_and_parameters['X test'])[:, 1])
 
     auc_pr = metrics.auc(pr_curve[1], pr_curve[0])
