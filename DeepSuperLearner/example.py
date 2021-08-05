@@ -138,7 +138,7 @@ def cross_validation(X, Y, models, space):
 
     final_best_model = None
 
-    cv_outer = KFold(n_splits=10, shuffle=True, random_state=1)
+    cv_outer = KFold(n_splits=2, shuffle=True, random_state=1)
     index = 1
     index_to_best = {}
     # enumerate splits
